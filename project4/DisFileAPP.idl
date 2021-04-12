@@ -1,0 +1,19 @@
+module FileSystemApp
+{
+  interface DisFileSever
+  {
+  string readFile(in string title);
+  boolean lockForwrite(in string title);
+  boolean writeToFile(in string title, in string contents);
+  boolean unlockForWrite(in string title);
+  string lookForFile(in string title);
+  oneway void shutdown();
+  };
+  
+  interface DisFileClient
+  {
+  string readFile(in string title);
+  boolean lockForwrite(in string title);
+  oneway void shutdown();
+  };
+};
